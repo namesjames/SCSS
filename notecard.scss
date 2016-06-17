@@ -16,7 +16,8 @@
   -o-transform: $transformation;  
 }
 
-@mixin photo-content {
+@mixin photo-content($file) {
+  content: url(#{$file}.jpg); 
   object-fit: cover;
 }
 
@@ -42,6 +43,8 @@
   -moz-transition: $time;
   -o-transition: $time;
 }
+
+$stripe-properties: to bottom, 15%, blue, white;
 
 .notecard{ 
   &:hover{
@@ -89,13 +92,13 @@
     .definition {
       width: 100%;
       height: 100%;
-            
-      .photo {
+      @include stripes($stripe-properties...);
+      
+     .photo {
+        @include photo-content('titanosaur');
         width: 60%;
-        margin: 0px auto;
-          
+        margin: 0px auto;  
       }
     }
   }
 }
-
