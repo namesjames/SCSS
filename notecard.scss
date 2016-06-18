@@ -44,6 +44,12 @@
   -o-transition: $time;
 }
 
+@mixin hover-color($color) {
+   &:hover{
+       color: $color;
+   }
+}
+
 $stripe-properties: to bottom, 15%, blue, white;
 
 .notecard{ 
@@ -74,6 +80,11 @@ $stripe-properties: to bottom, 15%, blue, white;
       text-align: center;
       position: relative;
       top: 40%;
+			@mixin hover-color($color) {
+   &:hover{
+       color: $color;
+   }
+}
     }    
   }
   
