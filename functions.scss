@@ -12,3 +12,28 @@ $lagoon-blue: fade-out(#62fdca, 0.5);
   border-radius: $width/30;
 	font-size: $width/6/2;
 }
+
+$list: (orange, purple, teal);
+
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
+
+$total: 10; 
+$step: 360deg / $total; 
+
+
+.ray {
+  height: 30px;
+}
+
+@for $i from 1 through $total {
+   .ray:nth-child(#{$i}){
+      background: adjust-hue(blue, $i * $step);
+			width: if($i % 2 == 0, 300px, 350px);
+			margin-left: if($i % 2 == 0, 0px, 50px);
+   }
+}
+
