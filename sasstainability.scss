@@ -27,7 +27,7 @@ h1 {
     @extend %absolute;
 
     span {
-      @include center;
+      @include %center;
       width: 40%;
       left: 30%;
     }
